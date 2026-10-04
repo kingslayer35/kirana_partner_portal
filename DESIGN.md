@@ -43,12 +43,12 @@ The interface uses a product register: familiar controls, readable amounts and s
 
 ## Colors
 
-PPT navy `#231A5C` gives the wordmark, headings and focus ring their identity. PPT pink `#E20750` marks the primary action and selected controls. `#2B2533` is body text; `#696475` is secondary text. The canvas is `#F6F6F8` and panels are white. Status text has a matching tinted background and an explicit written label.
+PPT navy `#231A5C` gives headings and the focus ring their identity. PPT pink `#E20750` marks the primary action and selected controls. `#2B2533` is body text; `#696475` is secondary text. The canvas is `#F6F6F8` and panels are white. Status text has a matching tinted background and an explicit written label.
 
 | Document role | Runtime token | Consumers |
 | --- | --- | --- |
 | Primary | `--acc` | Primary buttons, active navigation, earnings bars |
-| Navy | `--navy` / `--focus` | Headings, wordmark, keyboard focus |
+| Navy | `--navy` / `--focus` | Headings and keyboard focus |
 | Text / muted | `--ink` / `--muted` | Body content, labels, secondary copy |
 | Background / surface / border | `--bg` / `--surface` / `--line` | Page, cards, tables and separators |
 | Success / warning / danger | `--ok` / `--warn` / `--bad` | Status labels and message regions |
@@ -72,6 +72,8 @@ Use white panels and one-pixel borders. No gradients, glass, decorative shadows 
 Controls use an 8px radius and panels a 12px radius, mapped to `--radius-control` and `--radius-panel`. Scan step markers and status labels have small corners; rounded shapes must not make static data appear clickable.
 
 ## Components
+
+The user-supplied Meesho logo is stored unchanged at `assets/meesho-logo.png` and used in the header and favicon. The shared `.brand-logo` rule in `styles.css` reserves a 44px square on desktop and 40px on phones, with `alt="Meesho"` and preserved image proportions. The partner descriptor keeps the Valmo name beside the Meesho mark.
 
 Buttons are at least 44px tall. Pink is the primary action; secondary actions use a white surface and border. Disabled receipt actions preserve the original disabled condition. Selected navigation and order filters have visible state and semantic attributes. All enabled controls have hover, pressed and focus-visible treatments.
 
