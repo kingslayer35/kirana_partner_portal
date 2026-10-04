@@ -1,0 +1,83 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Kirana partner portal</title>
+<style>@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+:root{--bg:#FBF3F9;--ink:#1F1B2E;--acc:#8E1A74;--ok:#1E8E5A;--warn:#D98A00;--bad:#C73A3A;--line:#E3E4EE}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',system-ui,sans-serif;line-height:1.5}
+nav{display:flex;gap:6px;align-items:center;padding:12px 24px;background:#fff;border-bottom:1px solid var(--line);flex-wrap:wrap}
+nav b{margin-right:12px}
+nav a{padding:6px 14px;border-radius:999px;color:var(--ink);text-decoration:none;font-size:14px}
+nav a:hover{background:var(--bg)} nav a.on{background:var(--acc);color:#fff}
+main{max-width:1100px;margin:0 auto;padding:28px 24px}
+h1{font-size:30px;margin:0 0 6px} h2{font-size:18px;margin:0 0 12px} p.sub{margin:0 0 24px;color:#5b5670}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:16px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
+a.card{color:inherit;text-decoration:none} a.card:hover{border-color:var(--acc)}
+.two{display:grid;grid-template-columns:1fr 1.1fr;gap:20px} @media(max-width:800px){.two{grid-template-columns:1fr}}
+label{display:block;font-size:13px;font-weight:600;margin:12px 0 4px}
+input[type=text],input[type=number]{width:100%;padding:8px 10px;border:1px solid var(--line);border-radius:8px;font:inherit}
+input[type=range]{width:100%;accent-color:var(--acc)}
+.chk{display:flex;gap:8px;align-items:center;font-size:14px;margin:6px 0} .chk input{accent-color:var(--acc)}
+button{font:inherit;font-weight:600;padding:8px 14px;border-radius:999px;border:1px solid var(--acc);background:#fff;color:var(--acc);cursor:pointer}
+button:hover{background:var(--acc);color:#fff}
+.big{font-size:56px;font-weight:800;line-height:1} .pill{display:inline-block;padding:4px 12px;border-radius:999px;color:#fff;font-weight:600;font-size:14px}
+.bar{display:flex;height:16px;border-radius:8px;overflow:hidden;background:var(--line);margin:10px 0}
+.bar i{display:block;height:100%}
+table{width:100%;border-collapse:collapse;font-size:14px} td,th{padding:8px 6px;border-bottom:1px solid var(--line);text-align:left} .r{text-align:right}
+.row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+body{background:linear-gradient(#FFF1F7,#F3EEFD) fixed}
+.app{display:grid;grid-template-columns:230px 1fr;gap:20px;align-items:start}@media(max-width:800px){.app{grid-template-columns:1fr}}
+.side b{display:block;margin-bottom:2px}.side small{color:#5b5670;display:block;margin-bottom:14px}
+.side button,.steps button{border:0;border-radius:10px;padding:10px 12px;background:transparent;color:var(--ink);text-align:left}
+.side button{display:block;width:100%;margin-bottom:4px}
+.side button.on,.steps button.on,button.solid{background:var(--acc);color:#fff}button.solid:hover{background:#6e1259}
+.steps{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}.steps button{background:#fff;border:1px solid var(--line);border-radius:999px;padding:8px 16px}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:16px}.stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px}.stat b{display:block;font-size:26px}.stat span{font-size:13px;color:#5b5670}
+.yel{background:#FFF6DC;border:1px solid #F1D27A;border-radius:10px;padding:12px;margin-bottom:12px}
+.okbox{background:#E7F6EE;border:1px solid var(--ok);border-radius:10px;padding:12px;margin-bottom:12px}
+.errbox{background:#FDECEC;border:1px solid var(--bad);border-radius:10px;padding:12px;margin-bottom:12px}
+.seg{display:flex;gap:8px;margin:8px 0 14px}.seg button{flex:0 0 auto}
+.tl{list-style:none;margin:0;padding:0}.tl li{display:flex;gap:12px;padding:0 0 18px;position:relative}.tl li:before{content:"";width:14px;height:14px;border-radius:50%;background:var(--ok);flex:none;margin-top:4px}.tl li.n:before{background:#fff;border:2px solid #bbb}.tl small{color:#5b5670;display:block}
+.chat{background:#EFE9E1;border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:8px;margin-bottom:12px}.bub{background:#fff;border-radius:10px;padding:10px 12px;max-width:80%}.bub.me{background:#DCF8C6;align-self:flex-end}
+.deal{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px}.deal .pic{height:90px;border-radius:10px;background:#f4e6f0;display:grid;place-items:center;font-size:48px;margin-bottom:10px}.deal.off{opacity:.45}
+.tag{display:inline-block;background:var(--acc);color:#fff;font-size:12px;font-weight:700;border-radius:6px;padding:2px 8px}
+.hero{padding:10px 0 24px}.hero h1{font-size:40px}input[type=text].code{width:160px;font-size:22px;letter-spacing:8px;text-align:center}
+.card{overflow-x:auto}.two.n{grid-template-columns:1fr 2fr}@media(max-width:800px){.two,.two.n{grid-template-columns:1fr}main{padding:16px 12px}}</style></head><body>
+<main style="padding-top:20px"><div class="app"><aside class="card side" id="side"></aside><section id="v"></section></div></main>
+<script>
+const O=[['MS892341','Priya Mehta',"Women's Kurti, size M",299,1,'incoming',0],['MS892342','Aman Verma',"Men's T-shirt, size L",499,0,'incoming',0],['MS892343','Neha Singh','Handbag',799,1,'incoming',0],['MS892344','Rohit Kumar','Shoes, size 8',1299,0,'incoming',0],
+['MS892331','Kavya Rao','Cotton kurti set',349,1,'stored',2],['MS892332','Dev Malhotra','Backpack',0,0,'stored',4],['MS892333','Isha Gupta','Cushion covers',420,0,'stored',1],['MS892321','Rohan Das','Analog watch',899,1,'picked',0],['MS892311','Meera Joshi','Bedsheet',650,0,'returned',0]]
+.map(a=>({id:a[0],name:a[1],item:a[2],cod:a[3],tok:a[4],st:a[5],left:a[6]}));
+const T={dash:'Dashboard',recv:'Receive from delivery',pick:'Customer pickup',ord:'Orders tracker',earn:'Earnings'};
+const ST={incoming:['Arriving','#3B7DDD'],stored:['Awaiting pickup','#D98A00'],picked:['Picked up','#1E8E5A'],returned:['Returned','#C73A3A']};
+const s={tab:'dash',cur:'',scan2:'',pay:'UPI',code:'',err:'',msg:'',done:null,f:'all'};
+const m=n=>'₹'+n.toLocaleString('en-IN'),$=i=>document.getElementById(i);
+const due=o=>o.cod?o.cod-(o.tok?20:0):0,by=k=>O.filter(o=>o.st==k),get=id=>O.find(o=>o.id==id);
+const go=t=>{s.tab=t;s.err=s.msg='';s.code='';s.scan2='';s.done=null;draw()};
+function recv(id){const o=id?get(id):by('incoming')[0];if(!o||o.st!='incoming')return;o.st='stored';o.left=5;s.msg=o.id+' scanned as received from delivery. Added to inventory, customer notified, ready for pickup.';draw()}
+function sc2(){s.scan2=s.cur;s.err='';draw()}
+function hand(){const o=get(s.cur);if(s.scan2!=o.id){s.err='Scan the parcel as picked up by the customer first.';return draw()}if(s.code!=='4821'){s.err='Code does not match. Do not hand over the parcel.';return draw()}o.st='picked';s.done=o;s.err='';draw()}
+function back(id){get(id).st='returned';draw()}
+const V={
+dash:()=>`<h1>Ramesh General Store</h1><p class="sub">Valmo Kirana partner · Tuesday batch VAL-28194</p>
+<div class="stats">${['incoming','stored','picked','returned'].map(k=>`<div class="stat"><b>${by(k).length}</b><span>${ST[k][0]}</span></div>`).join('')}<div class="stat"><b>${m(by('stored').reduce((a,o)=>a+due(o),0))}</b><span>COD to collect</span></div></div>
+<div class="card"><h2>Today's batch</h2><p>${by('incoming').length} of the batch still to scan in.</p><button class="solid" onclick="go('recv')">Receive from delivery</button> <button onclick="go('pick')">Customer pickup</button> <button onclick="go('ord')">See all orders</button></div>
+<div class="card"><h2>Every parcel is scanned twice</h2><p><b>Received scan:</b> when the delivery partner drops it at your store. <b>Pickup scan:</b> when the customer collects it. Cash in hand is capped at ₹3,000 and swept to UPI within 24 hours. Deposit held: ₹10,000.</p></div>`,
+recv:()=>`<h1>Receive from delivery</h1><p class="sub">Scan each parcel when it arrives from the delivery partner. ${by('incoming').length} left.</p>${s.msg?`<div class="okbox">${s.msg}</div>`:''}
+<div class="card"><table><tr><th>Order</th><th>Customer</th><th>Item</th><th class="r">COD</th><th></th></tr>${by('incoming').map(o=>`<tr><td>${o.id}</td><td>${o.name}</td><td>${o.item}</td><td class="r">${o.cod?m(o.cod):'Prepaid'}</td><td class="r"><button onclick="recv('${o.id}')">Scan received</button></td></tr>`).join('')||'<tr><td colspan="5">All parcels in this batch are scanned in.</td></tr>'}</table><br><button class="solid" ${by('incoming').length?'':'disabled'} onclick="recv()">Scan next received parcel</button></div>`,
+pick:()=>{if(s.done){const o=s.done;return `<h1>Pickup completed</h1><div class="okbox"><b>${o.id} handed over to ${o.name}.</b> Parcel scanned as picked up.</div><div class="card"><table><tr><td>Payment collected (${s.pay})</td><td class="r"><b>${m(due(o))}</b></td></tr>${o.cod?`<tr><td>Original order value</td><td class="r">${m(o.cod)}</td></tr>${o.tok?'<tr><td>Token already paid</td><td class="r">− ₹20</td></tr>':''}`:''}</table><br><button class="solid" onclick="go('pick')">Next pickup</button></div>`}
+const h=by('stored');if(!h.length)return `<h1>Customer pickup</h1><div class="card"><p>No parcels waiting for pickup. Scan a batch in first.</p><button class="solid" onclick="go('recv')">Receive from delivery</button></div>`;
+if(!h.find(o=>o.id==s.cur))s.cur=h[0].id;const o=get(s.cur),ok=s.scan2==o.id;
+return `<h1>Customer pickup</h1><p class="sub">Scan the parcel when the customer picks it up, then verify their code.</p>${s.err?`<div class="errbox">${s.err}</div>`:''}
+<div class="two"><div class="card"><label>Parcel</label><select onchange="s.cur=this.value;s.scan2='';draw()" style="width:100%;padding:8px;border-radius:8px">${h.map(x=>`<option value="${x.id}" ${x.id==s.cur?'selected':''}>${x.id} · ${x.name}</option>`).join('')}</select>
+<label>Step 1: scan the parcel picked up by the customer</label>${ok?'<div class="okbox" style="margin:0">Parcel scanned as picked up</div>':'<button class="solid" onclick="sc2()">Scan picked-up parcel</button>'}
+<label>Step 2: customer pickup code (demo: 4821)</label><input class="code" type="text" maxlength="4" value="${s.code}" oninput="s.code=this.value">
+<label>Payment</label><div class="seg">${['UPI','Cash'].map(x=>`<button class="${s.pay==x?'solid':''}" onclick="s.pay='${x}';draw()">${x}</button>`).join('')}</div><button class="solid" onclick="hand()">Confirm and hand over</button></div>
+<div class="card"><h2>${o.name}</h2><p>${o.item} · ${o.id}</p><table>${o.cod?`<tr><td>Original COD</td><td class="r">${m(o.cod)}</td></tr>${o.tok?'<tr><td>₹20 token already paid</td><td class="r">− ₹20</td></tr>':''}<tr><td><b>Collect at store</b></td><td class="r"><b>${m(due(o))}</b></td></tr>`:'<tr><td><b>Prepaid</b></td><td class="r">Nothing to collect</td></tr>'}<tr><td>Days left to collect</td><td class="r">${o.left}</td></tr></table></div></div>`},
+ord:()=>{const F=[['all','All']].concat(Object.keys(ST).map(k=>[k,ST[k][0]])),L=O.filter(o=>s.f=='all'||o.st==s.f);
+return `<h1>Orders tracker</h1><p class="sub">Every parcel at your store and where it stands.</p><div class="steps">${F.map(f=>`<button class="${s.f==f[0]?'on':''}" onclick="s.f='${f[0]}';draw()">${f[1]} (${f[0]=='all'?O.length:by(f[0]).length})</button>`).join('')}</div>
+<div class="card"><table><tr><th>Order</th><th>Customer</th><th>Item</th><th class="r">To collect</th><th>Status</th><th>Received from delivery</th><th>Picked up by customer</th><th></th></tr>${L.map(o=>`<tr><td>${o.id}</td><td>${o.name}</td><td>${o.item}</td><td class="r">${due(o)?m(due(o)):'-'}</td><td><span class="tag" style="background:${ST[o.st][1]}">${ST[o.st][0]}</span>${o.st=='stored'?`<br><small>${o.left} days left</small>`:''}</td><td>${o.st!='incoming'?'✓':'-'}</td><td>${o.st=='picked'?'✓':'-'}</td><td class="r">${o.st=='stored'?`<button onclick="back('${o.id}')">Return to hub</button>`:''}</td></tr>`).join('')}</table></div>`},
+earn:()=>`<h1>Earnings this month</h1><div class="stats"><div class="stat"><b>₹1,780</b><span>Total earnings</span></div><div class="stat"><b>Friday</b><span>Next payout</span></div></div>
+<div class="card"><h2>Breakdown</h2>${[['Base handling',1280],['COD custody',320],['Pickup bonus',180]].map(x=>`<p style="margin:10px 0 2px"><b>${x[0]}</b> <span style="float:right">${m(x[1])}</span></p><div class="bar"><i style="width:${x[1]/1780*100}%;background:var(--acc)"></i></div>`).join('')}</div>`};
+function draw(){$('side').innerHTML=`<b>Ramesh General Store</b><small>Valmo Kirana partner</small>`+Object.keys(T).map(k=>`<button class="${s.tab==k?'on':''}" onclick="go('${k}')">${T[k]}</button>`).join('');$('v').innerHTML=V[s.tab]()}
+draw();
+</script></body></html>
